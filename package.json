@@ -1,0 +1,12 @@
+{
+  "name": "chromium-socks5-proxy",
+  "version": "1.0.0",
+  "description": "Run Dockerized Chromium through an authenticated SOCKS5 proxy via a gost bridge.",
+  "scripts": {
+    "postinstall": "playwright install chromium",
+    "test:proxy": "node proxy-test.js"
+  },
+  "dependencies": {
+    "playwright": "^1.60.0"
+  }
+}

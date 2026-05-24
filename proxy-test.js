@@ -1,6 +1,6 @@
 // Diagnose whether Chromium can browse through a SOCKS5 proxy.
 //
-//   npm install playwright && npx playwright install chromium
+//   npm install   (pulls Playwright + the Chromium binary via postinstall)
 //   PROXY_HOST=1.2.3.4 PROXY_PORT=1080 PROXY_USER=user PROXY_PASS=pass node proxy-test.js
 //
 // The telling result is the third test failing with:

@@ -89,9 +89,16 @@ A quick way to prove whether the problem is the proxy or the browser:
    - Works → the proxy is fine, the browser is the problem (this guide applies).
    - "connection to proxy closed" with no creds but works *with* creds → auth is required.
 
-2. **Confirm the browser limitation with Playwright** (optional). The included
-   [`proxy-test.js`](./proxy-test.js) launches headless Chromium with the proxy three
-   ways. The telling result is:
+2. **Confirm the browser limitation with Playwright** (optional). Install deps once
+   (`npm install` pulls Playwright and the Chromium binary), then run the included
+   [`proxy-test.js`](./proxy-test.js):
+
+   ```bash
+   npm install
+   PROXY_HOST=HOST PROXY_PORT=PORT PROXY_USER=USER PROXY_PASS=PASS node proxy-test.js
+   ```
+
+   It launches headless Chromium with the proxy three ways. The telling result is:
 
    ```
    browserType.launch: Browser does not support socks5 proxy authentication
@@ -105,6 +112,7 @@ A quick way to prove whether the problem is the proxy or the browser:
 |------|---------|
 | `docker-compose.example.yaml` | The compose stack with placeholders — copy to `docker-compose.yaml` |
 | `proxy-test.js` | Standalone Playwright script to reproduce/diagnose the issue |
+| `package.json` | `npm install` pulls Playwright + the Chromium binary |
 | `.gitignore` | Keeps your real `docker-compose.yaml` (with secrets) out of git |
 
 ## Notes
