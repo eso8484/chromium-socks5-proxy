@@ -1,0 +1,5 @@
+# Your real compose file holds the proxy password and the browser UI password.
+# Keep it local — commit docker-compose.example.yaml instead.
+docker-compose.yaml
+
+node_modules/
